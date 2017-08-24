@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "Embed Slack with Togelack",
+  "version": "0.1.0",
+
+  "description": "Make embed html code from Togelack",
+  "icons": {
+    "16": "images/slack_handwriting_icon_16.png",
+    "48": "images/slack_handwriting_icon_48.png",
+    "128": "images/slack_handwriting_icon_128.png"
+  },
+
+  "permissions": [
+    "tabs",
+    "clipboardRead",
+    "https://feedforce-togelack.herokuapp.com/summaries/*"
+  ],
+
+  "browser_action": {
+    "default_title": "Copy embed code from Togelack"
+  },
+
+  "background": {
+    "scripts": ["js/background.js"],
+    "persistent": false
+  },
+  "content_scripts": [{
+    "matches": ["https://feedforce-togelack.herokuapp.com/summaries/*"],
+    "js": ["js/scrape.js"]
+  }]
+}
