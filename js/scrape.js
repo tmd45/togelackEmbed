@@ -9,7 +9,7 @@ var buildEmbed = () => {
   for (let i = 0; i < list.length; i++) {
     // name
     let name = list[i].getElementsByClassName('slack-message-header-name')[0].innerText;
-    embedHtml += `<dt>:@${name}:${name}</dt>`;
+    embedHtml += `<dt>:@${name}: ${name}</dt>`;
 
     // body
     let bodyNode = list[i].getElementsByClassName('slack-message-body')[0];
